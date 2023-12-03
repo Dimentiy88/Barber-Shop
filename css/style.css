@@ -268,7 +268,14 @@ button {
 /* !Price styles */
 
 .price {
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
   background-color: var(--main-bg-cl);
+  background-image: url(../images/price/bg-imgbgr-img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .price-list {
 }
@@ -337,18 +344,39 @@ button {
 .gallery-list {
   --items: 4;
 }
+/* !Booking styles */
+.booking {
+  width: 570px;
+}
+.main-wrapper .container {
+  display: flex;
+  justify-content: space-between;
+}
+.main-wrapper {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--main-bg-cl);
+  background-image: url(../images/contacts/bg-imgcontacts-bgr-img.png);
+  background-repeat: no-repeat;
+  background-position: center left calc((50% + (785px / 2)) + 15px);
+}
+
 /* !Contacts styles */
 
 .contacts {
-  background-color: var(--main-bg-cl);
+  width: 570px;
+  padding-left: 100px;
 }
 .contacts-address {
+  margin-bottom: 72px;
   font-style: normal;
   color: var(--gray-cl);
 }
 .contacts-list {
 }
 .contacts-item {
+  margin-bottom: 20px;
 }
 .contacts-link {
 }
