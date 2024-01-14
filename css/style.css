@@ -20,6 +20,9 @@
 
   --header-idx: 10;
   --modal-idx: 100;
+
+  --anim-fast: 400ms ease-in;
+  --anim-slow: 1000ms ease-in-out;
 }
 /* Base styles */
 
@@ -149,6 +152,8 @@ button {
   background-color: transparent;
   border-radius: 25px;
   border: 1px solid #ff6c00;
+
+  transition: color var(--anim-fast), background-color var(--anim-fast);
 }
 .btn:hover,
 .btn:focus {
@@ -219,10 +224,13 @@ button {
   position: absolute;
   left: 0;
   bottom: 12px;
+
   display: block;
   width: 100%;
   height: 4px;
   border-radius: 4px;
+
+  transition: background-color var(--anim-fast);
 }
 
 .header-nav-link.current {
@@ -245,6 +253,8 @@ button {
   line-height: 1.33;
   letter-spacing: 0.1em;
   color: var(--secondary-txt-cl);
+
+  transition: color var(--anim-fast);
 }
 .header-contact:hover,
 .header-contact:focus {
@@ -287,6 +297,8 @@ button {
   font-size: 11px;
   line-height: 1.36;
   letter-spacing: 0.2em;
+
+  transition: color var(--anim-fast);
 }
 .media-link:hover,
 .media-link:focus {
@@ -317,6 +329,26 @@ button {
 }
 
 /* !Slider styles */
+
+.slider-pagination {
+  position: absolute;
+  top: 50%;
+  right: 35px;
+}
+.slider-pagination-item {
+  width: 8px;
+  height: 2px;
+  margin-left: auto;
+
+  background-color: var(--gray-cl);
+}
+.slider-pagination-item:not(:last-child) {
+  margin-bottom: 12px;
+}
+.slider-pagination-item.active {
+  width: 18px;
+  background-color: var(--secondary-bg-cl);
+}
 
 .slider-controls {
   position: absolute;
@@ -450,9 +482,11 @@ button {
 .benefits-list {
   display: flex;
   flex-wrap: wrap;
-  width: 370px;
-  margin: 0 auto;
   align-items: flex-start;
+
+  width: 370px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .benefits-item {
   width: 170px;
@@ -512,16 +546,23 @@ button {
 .team-wrapper {
   padding: 30px 15px;
 }
+.team-box {
+  position: relative;
+}
 .team-img {
 }
 .team-label {
   width: 90%;
   padding: 30px;
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
 
   color: #f7f7f7;
   background-color: rgb(17, 19, 25, 0.2);
   backdrop-filter: blur(3px);
-  border-radius: 10px;
+  border-radius: 15px;
+  text-align: center;
 }
 .team-subtitle {
   margin-bottom: 3px;
@@ -554,6 +595,8 @@ button {
 
   background-color: #fff;
   border-radius: 50%;
+
+  transition: color var(--anim-fast), background-color var(--anim-fast);
 }
 
 .socials-link:hover,
@@ -622,10 +665,66 @@ button {
 
 .footer {
 }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .footer-copyright {
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   letter-spacing: 0.2em;
   color: var(--gray-cl);
+}
+.footer-link {
+  padding-top: 52px;
+  padding-bottom: 52px;
+}
+/* !Madal-window style*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: var(--modal-idx);
+
+  background-color: rgb(17, 19, 25, 0.2);
+  backdrop-filter: blur(6px);
+}
+.modal {
+  position: absolute;
+  top: calc(50% - 275px);
+  left: calc(50% - 225px);
+  width: 450px;
+  min-height: 550px;
+  padding: 24px;
+
+  background-color: var(--secondary-bg-cl);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+.modal-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+
+  color: var(--secondary-bg-cl);
+
+  background-color: #ff6c00;
+  border-radius: 50%;
+  border: none;
+
+  cursor: pointer;
+}
+.madal-icon {
 }
