@@ -279,6 +279,10 @@ button {
   display: flex;
   align-items: flex-end;
 }
+.hero-media {
+  transform: rotate(-90deg) translateX(40px) translateY(36px);
+  transform-origin: center left;
+}
 .media {
   display: flex;
   align-items: center;
@@ -393,8 +397,14 @@ button {
   gap: 30px;
 }
 .about-item {
+  overflow: hidden;
 }
 .about-img {
+  transition: transform 1500ms linear;
+}
+
+.about-item:hover .about-img {
+  transform: scale(1.25);
 }
 .about-right-side {
   width: 470px;
@@ -540,28 +550,69 @@ button {
 }
 .team-list {
 }
-/* .team-item {
-  width: calc((100% - (30px * 2)) / 3);
-} */
+.team-item:hover .overlay {
+  /* !overlay slide */
+  transform: translateY(0%);
+
+  /* !overlay scale */
+  /* transform: translate(-50%, -50%) scale(1);
+  opacity: 1; */
+}
 .team-wrapper {
   padding: 30px 15px;
 }
 .team-box {
   position: relative;
+  overflow: hidden;
 }
 .team-img {
 }
-.team-label {
-  width: 90%;
-  padding: 30px;
+/* !overlay scale */
+/* .overlay {
   position: absolute;
-  bottom: 20px;
-  left: 5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.3);
+  opacity: 0;
 
-  color: #f7f7f7;
+  width: 80%;
+  height: 80%;
+  padding: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  border-radius: 10px;
+  background-color: rgba(17, 19, 25, 0.2);
+  backdrop-filter: blur(3px);
+
+  transition: transform 600ms cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    opacity 600ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+} */
+
+/* overlay slide */
+.overlay {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  transform: translateY(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
   background-color: rgb(17, 19, 25, 0.2);
   backdrop-filter: blur(3px);
-  border-radius: 15px;
+
+  transition: transform var(--anim-slow);
+}
+.overlay-label {
+  color: #f7f7f7;
   text-align: center;
 }
 .team-subtitle {
@@ -684,6 +735,8 @@ button {
 /* !Madal-window style*/
 
 .backdrop {
+  /* display: none; */
+
   position: fixed;
   top: 0;
   left: 0;
@@ -694,6 +747,11 @@ button {
 
   background-color: rgb(17, 19, 25, 0.2);
   backdrop-filter: blur(6px);
+}
+.is-hiden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .modal {
   position: absolute;

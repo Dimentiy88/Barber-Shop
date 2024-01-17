@@ -56,7 +56,9 @@
           </ul>
         </nav>
         <a class="header-contact link" href="tel:+380441111111">+38 044 111 11 11</a>
-        <button class="header-btn btn btn-light" type="button">Online-booking</button>
+        <button class="header-btn btn btn-light" type="button" data-modal-open
+          >Online-booking</button
+        >
       </div>
     </header>
     <main>
@@ -64,7 +66,7 @@
       <section class="hero">
         <div class="hero-container container">
           <div class="hero-left-side">
-            <ul class="media list">
+            <ul class="hero-media media list">
               <li class="media-item">
                 <a
                   class="media-link link"
@@ -242,7 +244,11 @@
                   width="370"
                   height="346"
                 />
-                <p class="team-label">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="overlay">
+                  <p class="overlay-label"
+                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p
+                  >
+                </div>
               </div>
               <div class="team-wrapper">
                 <h3 class="team-subtitle">John Smith</h3>
@@ -312,7 +318,11 @@
                   width="370"
                   height="346"
                 />
-                <p class="team-label">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="overlay">
+                  <p class="overlay-label"
+                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p
+                  >
+                </div>
               </div>
               <div class="team-wrapper">
                 <h3 class="team-subtitle">Michele Doe</h3>
@@ -382,7 +392,11 @@
                   width="370"
                   height="346"
                 />
-                <p class="team-label">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="overlay">
+                  <p class="overlay-label"
+                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p
+                  >
+                </div>
               </div>
               <div class="team-wrapper">
                 <h3 class="team-subtitle">Alan Black</h3>
@@ -559,14 +573,15 @@
       </div>
     </footer>
     <!-- Modal window -->
-    <!-- <div class="backdrop">
+    <div class="backdrop" data-modal>
       <div class="modal">
-        <button class="modal-btn" type="button">
+        <button class="modal-btn" type="button" data-modal-close>
           <svg class="madal-icon" width="20" height="20">
-            <use href=""></use>
+            <use href="./images/icons/"></use>
           </svg>
         </button>
       </div>
-    </div> -->
+    </div>
+    <script src="./modal.js"></script>
   </body>
 </html>
