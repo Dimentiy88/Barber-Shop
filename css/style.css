@@ -1,4 +1,6 @@
 :root {
+  /* Anchor links animation */
+  scroll-behavior: smooth;
   /* Fonts */
   --primary-font: 'Open Sans', sans-serif;
   --secondary-font: 'Raleway', sans-serif;
@@ -271,7 +273,6 @@ button {
 }
 
 .header-btn:hover {
-  /* animation-play-state: running; */
 }
 @keyframes shake-horizontal {
   0%,
@@ -900,5 +901,16 @@ button {
 
   cursor: pointer;
 }
-.madal-icon {
+
+/* Form tags */
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }

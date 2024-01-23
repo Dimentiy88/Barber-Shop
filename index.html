@@ -535,6 +535,23 @@
           <div class="container">
             <section class="booking section">
               <h2 class="title title-light">Online-booking</h2>
+              <form class="booking-form" name="booking_form">
+                <div class="booking-form-wrapper">
+                  <label class="booking-form-field">
+                    <input class="booking-form-input" type="text" name="user_name" />
+                    <span class="booking-form-label">Name*</span>
+                  </label>
+                  <label class="booking-form-field">
+                    <input class="booking-form-input" type="tel" name="user_phone" />
+                    <span class="booking-form-label">Phone*</span>
+                  </label>
+                </div>
+                <label class="booking-form-field">
+                  <textarea class="booking-form-message" name="user_message" rows="6"></textarea>
+                  <span class="booking-form-label">Message</span>
+                </label>
+                <button class="btn btn-light" type="submit">Send</button>
+              </form>
             </section>
             <section class="contacts section" id="contacts">
               <h2 class="title title-light">Contacts</h2>
