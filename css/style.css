@@ -902,15 +902,60 @@ button {
   cursor: pointer;
 }
 
-/* Form tags */
-.path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 5s linear forwards infinite;
+.modal-title {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 16px;
+  text-align: center;
+}
+.modal-form {
+}
+.modal-form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+.modal-form-field {
+  position: relative;
+  margin-bottom: 10px;
+}
+.modal-form-input {
+  width: 100%;
+  height: 46px;
+  padding: 0 38px;
+
+  border: 1px solid var(--main-bg-cl);
+  border-radius: 6px;
+
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+
+  transition: var(--anim-fast);
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
+.modal-form-input:focus {
+  outline-color: var(--accent-bg-cl);
+  box-shadow: 0 0 0 4px rgba(255, 108, 0, 0.25);
+}
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+
+  transform: translateY(-50%);
+
+  transition: var(--anim-fast);
+  pointer-events: none;
+}
+.modal-form-message {
+}
+.modal-form-agreement {
+}
+.modal-form-agreement-box {
+}
+.modal-form-agreement-text {
+}
+.modal-form-agreement-link {
+}
+.btn {
 }
